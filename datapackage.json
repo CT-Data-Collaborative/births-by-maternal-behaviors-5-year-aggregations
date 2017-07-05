@@ -1,0 +1,424 @@
+{
+  "name": "births-by-maternal-behaviors---5-year-aggregations",
+  "datapackage_version": "1.0-beta.18",
+  "title": "Births by Maternal Behaviors - 5-Year Aggregations",
+  "description": "Births by Maternal Behaviors - 5-Year Aggregations reports the 5-year average number and percentage of births in certain categories by maternal behavior characteristics (smoking status during pregnancy and initiation of prenatal care).",
+  "version": "1.0",
+  "licenses": [{
+    "url": "http://opendatacommons.org/licenses/pddl/",
+    "name": "Open Data Commons Public Domain",
+    "version": "1.0",
+    "id": "odc-pddl"
+  }],
+  "sources": [{
+    "name": "ctdph",
+    "web": ""
+  }],
+  "author":[{
+    "name": "Jenna Daly",
+    "email": "jdaly@ctdata.org",
+    "web": "http://ctdata.org"
+  }],
+  "contributor": [],
+  "resources": [{
+    "path": "data/maternal_characteristics_behavior_5-Year.csv",
+    "format": "csv",
+    "schema": {
+      "fields": [{
+          "name": "Town",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "FIPS",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Year",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Birth Weight",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+              "All", 
+              "Low Birth Weight (under 2500 grams)",
+              "Very Low Birth Weight (under 1500 grams)"
+            ]
+			    }
+        }, {
+          "name": "Gestational Age",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+              "All",
+              "37 weeks or more",
+              "Less than 37 weeks",
+              "Gestational age unknown"
+            ]
+			    }
+        }, {
+          "name": "Initiation of Prenatal Care",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+              "All",
+              "None",
+              "First Trimester",
+              "Second Trimester",
+              "Third Trimester",
+              "Unknown"
+            ]
+			    }
+        }, {
+          "name": "Smoking During Pregnancy",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+		          "All",
+		          "Yes",
+		          "No",
+		          "Unknown"
+            ]
+			    }
+        }, {
+          "name": "Measure Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+		        "enum": [
+		          "Number",
+              "Percent"
+            ]
+			    }
+        }, {
+          "name": "Variable",
+          "type": "string",
+          "dimension": true, 
+          "constraints": {
+		        "enum": [
+              "Births"
+            ]
+			    }
+        }, {
+          "name": "Value",
+          "type": "number",
+          "dimension": false
+        }]
+      }
+    }
+  ],
+  "last_modified": "06/22/2017",
+  "ckan_extras": {
+    "full_description": {
+      "ckan_name": "Full Description",
+      "value": "This dataset provides select birth outcomes (birthweight, gestational age) for Connecticut resident births along with select behavioral characteristics of the mother (smoking status during pregnancy and initiation of prenatal care). Low birth weight is less than 2500 grams, or about 5.5 pounds. Very low birth weight is less than 1500 grams, or about 3.3 pounds. A birth is premature if it occurs before the gestational age of 37 completed weeks. Smoking status during pregnancy is self-reported by the mother at time of delivery. Initiation of prenatal care refers to the trimester of pregnancy the mother was in when she was first counseled by a provider for that pregnancy. Late prenatal care is the initiation of prenatal care after the first trimester of pregnancy. Department of Public Health collects and publishes annual vital statistics reports (www.ct.gov/dph/RegistrationReport) and CTdata.org carries annual data, 3-year and 5-year averages. More dimensions can be found in the raw data such as birth pluralities. Alcohol use is no longer displayed on ctdata.org as it is rarely reported and not a reliable indicator.",
+      "type": "string"
+    },
+    "suppression": {
+      "ckan_name": "Suppression",
+      "value": "",
+      "type": "string"
+    },
+    "technical_notes": {
+      "ckan_name": "Technical Notes",
+      "value": "",
+      "type": "string"
+    },
+    "socrata": {
+      "ckan_name": "Socrata",
+      "value": "False",
+      "type": "string"
+    },
+    "socrata_url": {
+      "ckan_name": "Socrata Dataset URL",
+      "value": "",
+      "type": "string"
+    },
+    "domain": {
+      "ckan_name": "Domain",
+      "value": "Demographics",
+      "type": "string"
+    },
+    "subdomain": {
+      "ckan_name": "Subdomain",
+      "value": "Births",
+      "type": "string"
+    },
+    "geography": {
+      "ckan_name": "Geography",
+      "value": "Town",
+      "type": "string",
+      "constraints": {"enum": ["Town", "County", "Town/County", "District", "Other"]}
+    },
+    "frequency": {
+      "ckan_name": "Frequency",
+      "value": "Annual",
+      "type": "string"
+    },
+    "years_in_catalog": {
+      "ckan_name": "Years in Catalog",
+      "value": ["1999-2003", "2000-2004", "2001-2005", "2002-2006", "2003-2007", "2004-2008", "2005-2009", "2006-2010", "2007-2011", "2008-2012", "2009-2013", "2010-2014"],
+      "type": "array"
+    },
+    "latest_year": {
+      "ckan_name": "Latest Year Available",
+      "value": "2010-2014",
+      "type": "string"
+    },
+    "disabled_views": {
+      "ckan_name": "Disabled Views",
+      "value": [],
+      "type": "array",
+      "constraints": {"enum": ["map", "table", "bar", "line"]}
+    },
+    "units": {
+      "ckan_name": "Units",
+      "value": {
+        "Number": "",
+        "Percent": "%"
+      }
+    },
+    "expected_number_of_geographies": {
+		  "ckan_name": "Expected Number of Unique Geographies",
+		  "value": 170,
+		  "type": "string"
+		},     
+    "default": {      
+      "ckan_name": "Default",
+			"value": {
+		 		"Town": "Hartford",
+		 		"Year": ["2010-2014"],
+		 		"Variable": "Births", 
+		 		"Birth Weight": "All",
+		 		"Gestational Age": "All", 
+		 		"Initiation of Prenatal Care": "All", 
+		 		"Smoking During Pregnancy": "All"
+			},
+		  	"type": "object"
+    } 
+  },
+  "spot_checks": [
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Hartford",
+        "Year": "1999-2003",
+        "Variable": "Births",
+        "Measure Type": "Number",
+        "Birth Weight": "All",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care": "Unknown",
+        "Smoking During Pregnancy": "All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 260
+      } 
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town":	"New Milford",
+        "Year":	"2000-2004",
+        "Variable":	"Births",
+        "Measure Type":	"Percent",
+        "Birth Weight":	"Low Birth Weight (under 2500 grams)",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care": "First Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 5.8
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town":	"Wallingford",
+        "Year":	"2001-2005",
+        "Variable":	"Births",
+        "Measure Type":	"Number",
+        "Birth Weight":	"Very Low Birth Weight (under 1500 grams)",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care": "Second Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": -9999
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town":	"Andover",
+        "Year":	"2002-2006",
+        "Variable":	"Births",
+        "Measure Type":	"Percent",
+        "Birth Weight":	"All",
+        "Gestational Age": "Gestational age unknown",
+        "Initiation of Prenatal Care": "Third Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Voluntown", 
+        "Year":	"2003-2007",
+        "Variable":	"Births",
+        "Measure Type":	"Number",
+        "Birth Weight":	"Low Birth Weight (under 2500 grams)",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care":	"All",
+        "Smoking During Pregnancy":	"Yes"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 0
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Guilford",
+        "Year":	"2004-2008",
+        "Variable":	"Births",
+        "Measure Type":	"Percent",
+        "Birth Weight":	"All",
+        "Gestational Age": "37 weeks or more",
+        "Initiation of Prenatal Care":	"Third Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": -9999
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Killingly",
+        "Year":	"2005-2009",
+        "Variable":	"Births",
+        "Measure Type":	"Number",
+        "Birth Weight":	"All",
+        "Gestational Age": "Less than 37 weeks",
+        "Initiation of Prenatal Care":	"None",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": -9999
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Sprague",
+        "Year":	"2006-2010",
+        "Variable":	"Births",
+        "Measure Type":	"Percent",
+        "Birth Weight":	"Low Birth Weight (under 2500 grams)",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care":	"Second Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Lisbon",
+        "Year":	"2007-2011",
+        "Variable":	"Births",
+        "Measure Type":	"Number",
+        "Birth Weight":	"All",
+        "Gestational Age": "37 weeks or more",
+        "Initiation of Prenatal Care":	"Third Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 0
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Easton",
+        "Year":	"2008-2012",
+        "Variable":	"Births",
+        "Measure Type":	"Percent",
+        "Birth Weight":	"All",
+        "Gestational Age": "Gestational age unknown",
+        "Initiation of Prenatal Care":	"First Trimester",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Middletown",
+        "Year":	"2009-2013",
+        "Variable":	"Births",
+        "Measure Type":	"Number",
+        "Birth Weight":	"Low Birth Weight (under 2500 grams)",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care":	"All",
+        "Smoking During Pregnancy":	"No"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 155
+      } 
+    },  
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Durham",
+        "Year":	"2010-2014",
+        "Variable":	"Births",
+        "Measure Type":	"Percent",
+        "Birth Weight":	"Very Low Birth Weight (under 1500 grams)",
+        "Gestational Age": "All",
+        "Initiation of Prenatal Care":	"Unknown",
+        "Smoking During Pregnancy":	"All"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 0
+      } 
+    }
+  ],
+  "dimension_groups": []
+}
